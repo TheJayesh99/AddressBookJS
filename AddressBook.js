@@ -229,9 +229,6 @@ const SEARCH_CONTACT = 6
 const VIEW_CONTACT = 7
 const EXIT = 8
 let addressBook  = new Array()
-    
-addressBook.push(new Contact("Jayesh","Mali","Addr","kharghar","Maharashtra","123 321","90 9087654321","jayesh@mail.com"))
-addressBook.push(new Contact("Omkar","Chikane","Addr","Panvel","Maharashtra","133 121","90 9912345678","omkar@gmail.com"))
 console.log("Welcome to address book");
 let isExit = false
 while (!isExit) {
