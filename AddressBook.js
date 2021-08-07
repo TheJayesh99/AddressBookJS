@@ -183,6 +183,19 @@ function deleteConatct() {
     }
 }
 
+//method to add contact and check duplicate entries
+function addContact() {
+    let newContact = createContatct()
+    let alreadyExists = addressBook.filter(contact => contact.firstName == newContact.firstName).length
+    if (alreadyExists) {
+        console.log("Conatct already exists");
+    } else {
+        addressBook.push(newContact)
+        console.log("Added sucessfully");
+    }
+
+}
+
 //method to count number of contact
 function countContact() {
     let numberOfContact = addressBook.map(contact => contact).reduce(numberOfContact => numberOfContact+1,0)
@@ -196,7 +209,6 @@ const DELETE_CONTACT = 4
 const COUNT_CONTACT = 5
 const EXIT   = 6
 let addressBook  = new Array()
-
 console.log("Welcome to address book");
 let isExit = false
 while (!isExit) {
@@ -210,7 +222,7 @@ while (!isExit) {
     switch (Number(choice)) {
         case ADD_CONTACT:
             try{
-            addressBook.push(createContatct())
+                addContact()
             } 
             catch (error) {
             console.log(error);
